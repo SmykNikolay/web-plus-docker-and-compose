@@ -12,6 +12,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci --only=production
 COPY --from=builder /app/dist ./dist
+COPY ecosystem.config.js ./ 
 RUN npm install -g pm2
-EXPOSE 5001
+EXPOSE 3000
 CMD ["pm2-runtime", "start", "ecosystem.config.js"]
