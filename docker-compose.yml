@@ -5,8 +5,6 @@ services:
     image: backend-image
     container_name: backend
     restart: always
-    ports:
-      - '3000:3000'
     environment:
       - DATABASE_TYPE=postgres
       - DATABASE_HOST=database
@@ -14,6 +12,8 @@ services:
       - DATABASE_USERNAME=student
       - DATABASE_PASSWORD=student
       - DATABASE_NAME=kupipodariday
+    ports:
+      - '5001:5001'
     depends_on:
       - database
   frontend:
@@ -22,7 +22,7 @@ services:
     container_name: frontend
     restart: always
     ports:
-      - '8080:8080'
+      - '3001:3001'
     depends_on:
       - backend
   database:
