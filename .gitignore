@@ -19,3 +19,4 @@ logs/
 
 /frontend/build
 ignore-some.md
+/backend/dist
