@@ -18,3 +18,4 @@ logs/
 *.log
 
 /frontend/build
+ignore-some.md
