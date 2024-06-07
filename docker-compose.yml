@@ -5,6 +5,8 @@ services:
     image: backend-image
     container_name: backend
     restart: always
+    ports:
+      - '3000:3000'
     environment:
       - DATABASE_TYPE=postgres
       - DATABASE_HOST=database
@@ -19,6 +21,8 @@ services:
     image: frontend-image
     container_name: frontend
     restart: always
+    ports:
+      - '8080:8080'
     depends_on:
       - backend
   database:
