@@ -1,8 +1,8 @@
 module.exports = {
   apps: [
     {
-      name: 'my-app',
-      script: './dist/index.js',
+      name: 'backend',
+      script: './dist/main.js',
       env: {
         NODE_ENV: 'development',
       },
