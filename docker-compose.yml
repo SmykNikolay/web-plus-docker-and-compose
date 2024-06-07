@@ -1,0 +1,33 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    image: backend-image
+    container_name: backend
+    restart: always
+    environment:
+      - DATABASE_TYPE=postgres
+      - DATABASE_HOST=database
+      - DATABASE_PORT=5432
+      - DATABASE_USERNAME=student
+      - DATABASE_PASSWORD=student
+      - DATABASE_NAME=kupipodariday
+    depends_on:
+      - database
+  frontend:
+    build: ./frontend
+    image: frontend-image
+    container_name: frontend
+    restart: always
+    depends_on:
+      - backend
+  database:
+    image: postgres
+    container_name: database
+    restart: always
+    environment:
+      - POSTGRES_USER=student
+      - POSTGRES_PASSWORD=student
+      - POSTGRES_DB=kupipodariday
+    ports:
+      - '5432:5432'
