@@ -14,5 +14,5 @@ RUN npm ci --only=production
 COPY --from=builder /app/dist ./dist
 COPY ecosystem.config.js ./ 
 RUN npm install -g pm2
-EXPOSE 3000
+EXPOSE 4000
 CMD ["pm2-runtime", "start", "ecosystem.config.js"]
