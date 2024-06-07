@@ -13,7 +13,7 @@ services:
       - DATABASE_PASSWORD=student
       - DATABASE_NAME=kupipodariday
     ports:
-      - '4000:3000'
+      - '4000:4000'
     depends_on:
       - database
   frontend:
